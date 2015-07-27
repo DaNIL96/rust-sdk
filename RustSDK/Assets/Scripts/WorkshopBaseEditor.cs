@@ -60,7 +60,9 @@ public class WorkshopBaseEditor : Editor
 			GUI.enabled = canUpload;
             if ( GUILayout.Button( item.itemID == 0 ? "Create & Upload" : "Upload Changes", GUILayout.ExpandWidth( false ) ) )
 			{
+				Steamworks.SteamAPI.Init();
 				UploadToWorkshop( item );
+				Steamworks.SteamAPI.Shutdown();
 				UnityEditor.EditorUtility.ClearProgressBar();
 			}
 			GUI.enabled = true;
@@ -101,11 +103,9 @@ public class WorkshopBaseEditor : Editor
 
 			var path = AssetDatabase.GetAssetPath( item );
 			path = rootFolder + "/" + System.IO.Path.GetDirectoryName( path );
-			Debug.Log( path );
 			Steamworks.SteamUGC.SetItemContent( updateHandle, path );
 
 			var previewPath = rootFolder + "/" + AssetDatabase.GetAssetPath( item.previewImage );
-			Debug.Log( previewPath );
 			Steamworks.SteamUGC.SetItemPreview( updateHandle, previewPath );
 
 			var handle = Steamworks.SteamUGC.SubmitItemUpdate( updateHandle, changeNotes );
