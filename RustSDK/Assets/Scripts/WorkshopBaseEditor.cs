@@ -104,6 +104,7 @@ public class WorkshopBaseEditor : Editor
 			var path = AssetDatabase.GetAssetPath( item );
 			path = rootFolder + "/" + System.IO.Path.GetDirectoryName( path );
 			Steamworks.SteamUGC.SetItemContent( updateHandle, path );
+			Steamworks.SteamUGC.SetItemTags( updateHandle, item.GetTags() );
 
 			var previewPath = rootFolder + "/" + AssetDatabase.GetAssetPath( item.previewImage );
 			Steamworks.SteamUGC.SetItemPreview( updateHandle, previewPath );

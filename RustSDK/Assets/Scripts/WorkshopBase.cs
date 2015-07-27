@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class WorkshopBase : ScriptableObject
 {
@@ -16,5 +16,10 @@ public class WorkshopBase : ScriptableObject
 	public virtual void StartPreview()
 	{
 		Debug.LogWarning( "StartPreview is not Implemented" );
+	}
+
+	public virtual List<string> GetTags()
+	{
+		return new List<string>();
 	}
 }

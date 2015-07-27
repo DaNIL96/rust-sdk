@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 [CreateAssetMenu( menuName = "Workshop/Skin Meta", fileName = "meta.asset" )]
 public class WorkshopSkin : WorkshopBase
@@ -42,4 +42,9 @@ public class WorkshopSkin : WorkshopBase
 		pf.transform.position = Vector3.zero;
 		pf.transform.rotation = Quaternion.identity;
     }
+
+	public override List<string> GetTags()
+	{
+		return new List<string>() { "Skin", skinType.ToString() + " Skin" };
+	}
 }
