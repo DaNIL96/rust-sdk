@@ -52,7 +52,7 @@ public class WorkshopBaseEditor : Editor
 			{
 				if ( GUILayout.Button( "VIEW ONLINE", GUILayout.ExpandWidth( false ) ) )
 				{
-					Application.OpenURL( "http://steamcommunity.com/sharedfiles/filedetails/?id=489329801" );
+					Application.OpenURL( "http://steamcommunity.com/sharedfiles/filedetails/?id=" + item.itemID );
 				}
 			}
 
