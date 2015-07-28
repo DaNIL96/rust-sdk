@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7fef0abf6201614abc4e786f4d43068, type: 3}
   m_Name: pants.facepunch.meta
   m_EditorClassIdentifier: 
-  itemID: 489329801
-  title: Facepunch TShirt
-  description: A tshirt to represent your fifth favourite game developer!
+  itemID: 489970707
+  title: Facepunch Pants
+  description: Facepunch on one side of your butt
   previewImage: {fileID: 2800000, guid: 95e3affcaee59854a94f91c256c91be2, type: 3}
   skinType: 1
   skinMaterial: {fileID: 2100000, guid: a5c0ac3824505e5428ec827ac3d93f46, type: 2}
