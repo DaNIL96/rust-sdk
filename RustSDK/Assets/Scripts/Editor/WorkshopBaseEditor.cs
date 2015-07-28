@@ -41,6 +41,7 @@ public class WorkshopBaseEditor : Editor
 			if ( item.title.Length <= 1 ) { EditorGUILayout.HelpBox( "Your title is too short", MessageType.Error ); canUpload = false; }
 			if ( item.description.Length <= 1 ) { EditorGUILayout.HelpBox( "Your title is too short", MessageType.Error ); canUpload = false; }
 			if ( item.previewImage == null ) { EditorGUILayout.HelpBox( "You don't have a preview image set", MessageType.Error ); canUpload = false; }
+			if ( item.previewImage.width != item.previewImage.height ) { EditorGUILayout.HelpBox( "Your preview image should be square!", MessageType.Error ); canUpload = false; }
 
 			EditorGUILayout.LabelField( "Change Notes:" );
 			changeNotes = EditorGUILayout.TextArea( changeNotes, GUILayout.Height( 64 ) );
