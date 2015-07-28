@@ -13,6 +13,8 @@ public class WorkshopBase : ScriptableObject
 
 	public Texture2D previewImage;
 
+#if UNITY_EDITOR
+
 	public virtual void StartPreview()
 	{
 		Debug.LogWarning( "StartPreview is not Implemented" );
@@ -22,4 +24,6 @@ public class WorkshopBase : ScriptableObject
 	{
 		return new List<string>();
 	}
+
+#endif
 }
