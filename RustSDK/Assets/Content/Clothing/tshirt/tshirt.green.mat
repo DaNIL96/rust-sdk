@@ -8,8 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: tshirt.green
   m_Shader: {fileID: 4800000, guid: 8f7374a6f1cae4a4595f00822a8cb485, type: 3}
-  m_ShaderKeywords: _COLORIZELAYER_ON _DETAILLAYER_ON _LIGHTMAPPING_DYNAMIC_LIGHTMAPS
-    _LIGHTMAPPING_REALTIME _NORMALMAP _UVSEC_UV1
+  m_ShaderKeywords: _COLORIZELAYER_ON _DETAILLAYER_ON _DETAIL_MULX2 _LIGHTMAPPING_DYNAMIC_LIGHTMAPS
+    _LIGHTMAPPING_REALTIME _MICROFIBERFUZZLAYER_ON _UVSEC_UV1
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -20,21 +20,21 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: b971ed2cce84ff946bc60aee7efcefd5, type: 3}
+          m_Texture: {fileID: 2800000, guid: 9a7d4ab71aa2b8041be8cbc9ab6bb72c, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 4315e1e86f90492489ce85e57e87f40a, type: 3}
+          m_Texture: {fileID: 2800000, guid: c8bbb86a30d83dd40a888a547805da54, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _DetailNormalMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 400de6f43b583614c97f559165b0af18, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -81,6 +81,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _MetallicGlossMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _Occlusion
         second:
           m_Texture: {fileID: 2800000, guid: 8cb2448eeb776f142a39822a164e6ab5, type: 3}
@@ -88,7 +95,35 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MetallicGlossMap
+          name: _SpecGlossMap
+        second:
+          m_Texture: {fileID: 2800000, guid: afda294c4a2075a41ad5a9825b83e101, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailOcclusionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MicrofiberFuzzMask
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ColorizeMask
+        second:
+          m_Texture: {fileID: 2800000, guid: 1dab54d99f8f6c945a8db9d172bb3cba, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailColor
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -123,34 +158,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _SpecGlossMap
-        second:
-          m_Texture: {fileID: 2800000, guid: afda294c4a2075a41ad5a9825b83e101, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DetailOcclusionMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DetailColor
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _MicrofiberFuzzMask
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _Cubemap
         second:
           m_Texture: {fileID: 0}
@@ -175,13 +182,6 @@ Material:
           name: _Grunge
         second:
           m_Texture: {fileID: 2800000, guid: e47ea12221103e345ab8032f3c11f623, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ColorizeMask
-        second:
-          m_Texture: {fileID: 2800000, guid: e2b23195c27f4d14da46ee04e34120ca, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -280,23 +280,27 @@ Material:
       data:
         first:
           name: _MicrofiberFuzzLayer
-        second: 0
+        second: 1
       data:
         first:
           name: _MicrofiberFuzzIntensity
-        second: .453999996
+        second: .155000001
       data:
         first:
           name: _MicrofiberFuzzScatter
-        second: .758000016
+        second: .521000028
       data:
         first:
           name: _MicrofiberFuzzOcclusion
-        second: .638999999
+        second: 1
       data:
         first:
           name: _MicrofiberFuzzMaskWithGloss
         second: 0
+      data:
+        first:
+          name: _ColorizeLayer
+        second: 1
       data:
         first:
           name: _DetailTiling
@@ -353,10 +357,6 @@ Material:
         first:
           name: _GrungeTiling
         second: .829999983
-      data:
-        first:
-          name: _ColorizeLayer
-        second: 1
     m_Colors:
       data:
         first:
@@ -384,10 +384,6 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _SpecularColor
-        second: {r: 0, g: 0, b: 0, a: 1}
-      data:
-        first:
           name: _MainTexScroll
         second: {r: 0, g: 0, b: 0, a: 0}
       data:
@@ -396,11 +392,31 @@ Material:
         second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
-          name: _TintColor
+          name: _MicrofiberFuzzColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _MicrofiberFuzzColor
+          name: _ColorizeColorR
+        second: {r: .366353989, g: .448529422, b: .220966697, a: 1}
+      data:
+        first:
+          name: _ColorizeColorG
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _ColorizeColorB
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _ColorizeColorA
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _SpecularColor
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _TintColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
@@ -422,19 +438,3 @@ Material:
         first:
           name: _GrungeColor
         second: {r: .411764711, g: .266930759, b: .0888119936, a: 0}
-      data:
-        first:
-          name: _ColorizeColorR
-        second: {r: .366353989, g: .448529422, b: .220966697, a: 1}
-      data:
-        first:
-          name: _ColorizeColorG
-        second: {r: 1, g: 1, b: 1, a: 0}
-      data:
-        first:
-          name: _ColorizeColorB
-        second: {r: 0, g: 0, b: 0, a: 0}
-      data:
-        first:
-          name: _ColorizeColorA
-        second: {r: 1, g: 1, b: 1, a: 0}

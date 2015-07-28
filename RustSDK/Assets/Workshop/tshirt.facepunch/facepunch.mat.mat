@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: tshirt.facepunch.mat
+  m_Name: facepunch.mat
   m_Shader: {fileID: 4800000, guid: 8f7374a6f1cae4a4595f00822a8cb485, type: 3}
   m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 5
