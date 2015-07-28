@@ -7,16 +7,20 @@ public class WorkshopSkin : WorkshopBase
 	public enum SkinType : int
 	{
 		TShirt,
+		Pants
 	}
 
 	public static string[] skinPrefabs =
 	{
-		"Assets/Content/Clothing/tshirt/tshirt.preview.prefab"
+		"Assets/Content/Clothing/tshirt/tshirt.preview.prefab",
+		"Assets/Content/Clothing/pants/pants.preview.prefab",
 	};
 
 	[Header( "Skin Setup" )]
 	public SkinType skinType;
 	public Material skinMaterial;
+
+#if UNITY_EDITOR
 
 	public override void StartPreview()
 	{
@@ -47,4 +51,6 @@ public class WorkshopSkin : WorkshopBase
 	{
 		return new List<string>() { "Skin", skinType.ToString() + " Skin" };
 	}
+
+#endif
 }
